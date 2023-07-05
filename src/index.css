@@ -1,0 +1,23 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+:root {
+  --secondary-color: #f4f5fa;
+  --dominant-color: #dadada;
+  --primary-color: #ff6f61;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: var(--dominant-color);
+}
+.d-flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.cursor-pointer{
+  cursor: pointer;
+}

@@ -1,0 +1,53 @@
+.clock__timer {
+  background-color: var(--secondary-color);
+  padding: 0.8rem;
+  border-radius: 0.5rem;
+  display: grid;
+  gap: 0.8rem;
+}
+
+.clock__playing {
+  outline: 2px solid #00bf9a;
+}
+
+.clock__timerHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.clock__wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.clock__circle {
+  position: relative;
+  height: 8rem;
+  width: 8rem;
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  align-items: center;
+  border: 5px solid var(--primary-color);
+  border-radius: 50%;
+}
+
+.clock__circle > span {
+  font-weight: 1.3rem;
+  font-weight: bold;
+  gap: 0.5rem;
+}
+.clock__btns {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+}
+
+@media screen and (max-width: 540px) {
+  .clock__circle {
+    height: 5rem;
+    width: 5rem;
+    border-radius: 8rem;
+  }
+}

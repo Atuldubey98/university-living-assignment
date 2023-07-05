@@ -1,0 +1,28 @@
+.icon__btn > span {
+  font-weight: 600;
+}
+.icon__btn {
+  background-color: #00bf9a;
+  width: fit-content;
+  border-radius: 0.3rem;
+  padding: 0.3rem;
+  color: var(--secondary-color);
+  gap: 0.3rem;
+  cursor: pointer;
+  transition: all ease-in 300ms;
+}
+.danger {
+  background-color: #7b32da;
+}
+.success {
+  background-color: #00bf9a;
+}
+@media screen and (max-width: 768px) {
+  .icon__btn > span {
+    display: none;
+  }
+}
+.icon__btn:hover {
+  opacity: 0.8;
+  transform: translateY(-1px);
+}

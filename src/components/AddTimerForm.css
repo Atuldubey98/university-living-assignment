@@ -1,0 +1,18 @@
+.timer__clock {
+  max-width: 216px;
+  margin: auto;
+  gap: 8px;
+  border: 5px solid black;
+  padding: 0.3rem;
+  border-radius: 0.5rem;
+  background-color: var(--secondary-color);
+}
+.timer__form {
+  max-width: 450px;
+  margin: auto;
+  display: grid;
+  gap: 0.8rem;
+}
+.timer__formBtns {
+  gap: 0.8rem;
+}

@@ -29,11 +29,13 @@ export default function WorldClockPage() {
           />
 
           <div className="right__worldtime">
-            <WorldTimeField
-              value={wordtime.abbreviation}
-              label="Abbreviation"
-            />
-            <WorldTimeField value={wordtime.timezone} label="Timezone" />
+            <div className="right__worldtimeFields">
+              <WorldTimeField
+                value={wordtime.abbreviation}
+                label="Abbreviation"
+              />
+              <WorldTimeField value={wordtime.timezone} label="Timezone" />
+            </div>
           </div>
         </section>
       ) : null}

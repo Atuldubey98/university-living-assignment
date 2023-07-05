@@ -12,5 +12,9 @@
   color: white;
 }
 .button__control:hover {
-  opacity: 0.9;
+  background-color: #ff4837;
+}
+.button__control:disabled,.button__control[disabled]{
+  opacity: 0.8;
+  cursor: not-allowed;
 }

@@ -1,6 +1,12 @@
 .wordtime {
   display: grid;
+  gap: 0.8rem;
   grid-template-columns: 1fr 1fr;
+}
+.right__worldtime {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 @media screen and (max-width: 768px) {
   .wordtime {

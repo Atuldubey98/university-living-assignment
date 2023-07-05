@@ -71,9 +71,10 @@ export default function AddTimerForm(props: AddTimerFormProps) {
         />
       </div>
       <div className="timer__formBtns d-flex-center">
-        <Button type="submit" label="Add Timer" />
+        <Button disabled={!valid} type="submit" label="Add Timer" />
         <Button
           type="button"
+          disabled={!valid}
           label="Add & Start Timer"
           onClick={onAddAndStartTimer}
         />

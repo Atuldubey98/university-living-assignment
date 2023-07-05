@@ -3,11 +3,12 @@ import { TimeZone } from "../interfaces/WorldTimeInterfaces";
 import Button from "./Button";
 import "./TimeZoneSelectForm.css";
 import useWorldTimeZones from "../hooks/useWorldTimeZones";
+import { BounceLoader } from "react-spinners";
 export type TimeZoneSelectFormProps = {
   onTimeZoneSelect: (timezone: TimeZone) => void;
 };
 export default function TimeZoneSelectForm(props: TimeZoneSelectFormProps) {
-  const { timeZones } = useWorldTimeZones();
+  const { timeZones, timeZoneLoading } = useWorldTimeZones();
 
   const { onTimeZoneSelect } = props;
   const defaultTimeZone =
@@ -22,7 +23,11 @@ export default function TimeZoneSelectForm(props: TimeZoneSelectFormProps) {
     e.preventDefault();
     onTimeZoneSelect(selectedTimeZone);
   };
-  return timeZones.length > 0 ? (
+  return timeZoneLoading ? (
+    <div className="d-flex-center">
+      <BounceLoader color="var(--primary-color)" />
+    </div>
+  ) : timeZones.length > 0 ? (
     <form className="timezones__form" onSubmit={onSubmit}>
       <select
         onChange={onChangeTimeZone}

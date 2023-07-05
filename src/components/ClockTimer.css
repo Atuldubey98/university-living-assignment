@@ -32,7 +32,29 @@
   border: 5px solid var(--primary-color);
   border-radius: 50%;
 }
-
+.clock__ears {
+  width: 2.3rem;
+  height: 2.3rem;
+  border-radius: 50%;
+  background-color: var(--primary-color);
+  position: absolute;
+}
+.clock__right {
+  left: 80%;
+  top: -15%;
+}
+.clock__left {
+  right: 80%;
+  top: -15%;
+}
+.clock__stand {
+  position: absolute;
+  width: 125px;
+  background-color: var(--primary-color);
+  height: 10px;
+  bottom: -10%;
+  transform: skewX(-20deg);
+}
 .clock__circle > span {
   font-weight: 1.3rem;
   font-weight: bold;
@@ -44,4 +66,3 @@
   justify-content: center;
   gap: 0.8rem;
 }
-

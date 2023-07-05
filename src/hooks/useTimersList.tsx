@@ -1,13 +1,17 @@
-import { useReducer } from "react";
+import { useEffect, useReducer } from "react";
 import { NewTimer, Timer } from "../interfaces/TimerInterfaces";
+import useLocalStorage from "./useLocalStorage";
 
 export default function useTimersList() {
+  const { getFromLocalStorage, setLocalStorage } = useLocalStorage("timers");
+
   type State = {
     timers: Timer[];
   };
   type Action =
     | { type: "timer:add"; payload: Timer }
     | { type: "timer:update"; payload: Timer }
+    | { type: "timer:addAll"; payload: Timer[] }
     | { type: "timer:delete"; payload: string };
 
   function reducer(state: State, action: Action): State {
@@ -33,8 +37,13 @@ export default function useTimersList() {
         return state;
     }
   }
-  const [state, dispatch] = useReducer(reducer, { timers: [] });
+  const [state, dispatch] = useReducer(reducer, {
+    timers: Array.isArray(getFromLocalStorage()) ? getFromLocalStorage() : [],
+  });
   const { timers } = state;
+  useEffect(() => {
+    setLocalStorage(timers);
+  }, [state]);
   function addTimer(newTimer: NewTimer) {
     const { seconds, minutes, eventName, id } = newTimer;
     const initialSeconds = minutes * 60 + seconds;
@@ -76,6 +85,7 @@ export default function useTimersList() {
   function deleteTimerById(timerId: string) {
     dispatch({ type: "timer:delete", payload: timerId });
   }
+
   return {
     timers,
     addTimer,

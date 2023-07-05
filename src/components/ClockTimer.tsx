@@ -3,10 +3,11 @@ import { GrPowerReset } from "react-icons/gr";
 import { Timer } from "../interfaces/TimerInterfaces";
 import "./ClockTimer.css";
 
-import { FaPause, FaPlay } from "react-icons/fa";
-import IconButton from "./IconButton";
-import { useEffect } from "react";
 import classNames from "classnames";
+import { FaPause, FaPlay } from "react-icons/fa";
+import useClockTimer from "../hooks/useClockTimer";
+import IconButton from "./IconButton";
+import { getTwoZeroTime } from "../utils";
 
 export interface ClockTimerProps {
   timer: Timer;
@@ -24,13 +25,7 @@ export default function ClockTimer(props: ClockTimerProps) {
   } = timer;
   const seconds = totalSeconds % 60;
   const minutes = parseInt((totalSeconds / 60).toString());
-  let interval: number | undefined = undefined;
-  useEffect(() => {
-    interval = setInterval(updateTimer, 1000);
-    return () => {
-      clearInterval(interval);
-    };
-  }, [isPaused, seconds]);
+  useClockTimer([isPaused, seconds], updateTimer);
   const onStartTimer = () => {
     updateTimerById({ ...timer, isPaused: false });
   };
@@ -55,9 +50,6 @@ export default function ClockTimer(props: ClockTimerProps) {
   }
   const showResumeButton = initialSeconds !== totalSeconds;
 
-  const getTwoZeroTime = (time: number) => {
-    return time > 10 ? `${time}` : `0${time}`;
-  };
   const hasTimerEnded = totalSeconds === 0;
   return (
     <li

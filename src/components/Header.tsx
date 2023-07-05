@@ -13,7 +13,7 @@ export default function Header() {
           <Link to={"/"}>Event Timers</Link>
         </li>
         <li>
-          <Link to={"/"}>World Clock</Link>
+          <Link to={"/world-clock"}>World Clock</Link>
         </li>
       </ul>
     </header>

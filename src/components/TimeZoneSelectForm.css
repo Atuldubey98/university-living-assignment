@@ -1,0 +1,11 @@
+.timezones__form > select {
+  font-size: 1.1rem;
+  padding: 0.3rem;
+  width: 100%;
+}
+
+.timezones__form {
+  margin: auto;
+  display: grid;
+  gap: 0.8rem;
+}

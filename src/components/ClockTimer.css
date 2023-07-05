@@ -23,6 +23,7 @@
 .clock__circle {
   position: relative;
   height: 8rem;
+  background-color: var(--secondary-color);
   width: 8rem;
   display: flex;
   gap: 0.5rem;
@@ -44,10 +45,3 @@
   gap: 0.8rem;
 }
 
-@media screen and (max-width: 540px) {
-  .clock__circle {
-    height: 5rem;
-    width: 5rem;
-    border-radius: 8rem;
-  }
-}

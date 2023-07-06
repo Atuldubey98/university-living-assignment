@@ -2,7 +2,7 @@
   max-width: 216px;
   margin: auto;
   gap: 8px;
-  border: 5px solid black;
+  border: 5px solid var(--text-color-normal);
   padding: 0.3rem;
   border-radius: 0.5rem;
   background-color: var(--secondary-color);

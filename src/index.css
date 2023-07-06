@@ -7,6 +7,7 @@
   --secondary-color: #f4f5fa;
   --dominant-color: #dadada;
   --primary-color: #ff6f61;
+  --text-color-normal: black;
 }
 
 body {
@@ -18,6 +19,6 @@ body {
   align-items: center;
   justify-content: center;
 }
-.cursor-pointer{
+.cursor-pointer {
   cursor: pointer;
 }

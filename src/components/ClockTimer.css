@@ -1,6 +1,6 @@
 .clock__timer {
   background-color: var(--secondary-color);
-  padding: 0.8rem;
+  padding: 1rem;
   border-radius: 0.5rem;
   display: grid;
   gap: 0.8rem;

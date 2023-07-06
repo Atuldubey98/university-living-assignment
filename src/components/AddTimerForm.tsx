@@ -58,6 +58,7 @@ export default function AddTimerForm(props: AddTimerFormProps) {
           }}
           placeholder="MM"
         />
+        <span className="timer__clockSeperator">:</span>
         <Input
           name="seconds"
           value={seconds}

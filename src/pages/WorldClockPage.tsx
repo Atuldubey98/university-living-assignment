@@ -1,8 +1,8 @@
 import { BounceLoader } from "react-spinners";
 import LeftWorldTime from "../components/LeftWorldTime";
 import PageLayout from "../components/PageLayout";
+import RightWorldTime from "../components/RightWorldTime";
 import TimeZoneSelectForm from "../components/TimeZoneSelectForm";
-import WorldTimeField from "../components/WorldTimeField";
 import useWorldTime from "../hooks/useWorldTime";
 import "./WorldClockPage.css";
 export default function WorldClockPage() {
@@ -27,16 +27,10 @@ export default function WorldClockPage() {
             datetime={dateTime}
             onChangeIncreaseSeconds={onChangeIncreaseSeconds}
           />
-
-          <div className="right__worldtime">
-            <div className="right__worldtimeFields">
-              <WorldTimeField
-                value={wordtime.abbreviation}
-                label="Abbreviation"
-              />
-              <WorldTimeField value={wordtime.timezone} label="Timezone" />
-            </div>
-          </div>
+          <RightWorldTime
+            abbreviation={wordtime.abbreviation}
+            timezone={wordtime.timezone}
+          />
         </section>
       ) : null}
     </PageLayout>

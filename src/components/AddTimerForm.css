@@ -16,3 +16,15 @@
 .timer__formBtns {
   gap: 0.8rem;
 }
+.timer__clockSeperator {
+  font-size: 3rem;
+  animation: blinkInfinite 1000ms ease-in infinite forwards;
+}
+@keyframes blinkInfinite {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

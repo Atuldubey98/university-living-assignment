@@ -8,6 +8,7 @@ import { FaPause, FaPlay } from "react-icons/fa";
 import useClockTimer from "../hooks/useClockTimer";
 import IconButton from "./IconButton";
 import { getTwoZeroTime } from "../utils";
+import ClockCircle from "./ClockCircle";
 
 export interface ClockTimerProps {
   timer: Timer;
@@ -67,15 +68,11 @@ export default function ClockTimer(props: ClockTimerProps) {
         />
       </div>
       <section className="clock__wrapper">
-        <div className="clock__circle">
-          <div className="clock__left clock__ears"></div>
-          <div className="clock__right clock__ears"></div>
-
+        <ClockCircle>
           <span>{getTwoZeroTime(minutes)}</span>
           <span>:</span>
           <span>{getTwoZeroTime(seconds)}</span>
-          <div className="clock__stand"></div>
-        </div>
+        </ClockCircle>
         <div className="clock__btns">
           {hasTimerEnded ? null : (
             <div className="clock__btns">

@@ -2,7 +2,8 @@ import { Moment } from "moment";
 import useClockTimer from "../hooks/useClockTimer";
 import Calender from "./Calender";
 import "./LeftWorldTime.css";
-import { getTwoZeroTime } from "../utils";
+import { getDateTimeToDisplayByDate } from "../utils";
+import ClockCircle from "./ClockCircle";
 export type LeftWorldTimeProps = {
   datetime: Moment | null;
   onChangeIncreaseSeconds: () => void;
@@ -14,30 +15,17 @@ export default function LeftWorldTime(props: LeftWorldTimeProps) {
   useClockTimer([utcDateTime?.seconds()], () => {
     props.onChangeIncreaseSeconds();
   });
-  const seconds = getTwoZeroTime(utcDateTime?.seconds() || 0);
-  const minutes = getTwoZeroTime(utcDateTime?.minutes() || 0);
-  const hours = getTwoZeroTime(utcDateTime?.hours() || 0);
-  const month = utcDateTime?.format("MMMM") || "";
-  const date = getTwoZeroTime(utcDateTime?.date() || 0) || "";
-  const year = getTwoZeroTime(utcDateTime?.year() || 0) || "";
+  const { seconds, minutes, hours, month, date, year } =
+    getDateTimeToDisplayByDate(utcDateTime);
   return (
     <div className="left__worldtime">
-      <div
-        style={{
-          fontSize: "1.1rem",
-        }}
-        className="clock__circle"
-      >
-        <div className="clock__left clock__ears"></div>
-        <div className="clock__right clock__ears"></div>
-
+      <ClockCircle>
         <span>{hours}</span>
         <span>:</span>
         <span>{minutes}</span>
         <span>:</span>
         <span>{seconds}</span>
-        <div className="clock__stand"></div>
-      </div>
+      </ClockCircle>
       <Calender calender={{ date, year, month }} />
     </div>
   );

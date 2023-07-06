@@ -42,7 +42,7 @@ export default function TimeZoneSelectForm(props: TimeZoneSelectFormProps) {
         ))}
       </select>
       <div className="d-flex-center">
-        <Button label="Get time" type="submit" />
+        <Button label="Get time" type="submit" disabled={timeZoneLoading} />
       </div>
     </form>
   ) : null;

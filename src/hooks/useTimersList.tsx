@@ -41,9 +41,11 @@ export default function useTimersList() {
     timers: Array.isArray(getFromLocalStorage()) ? getFromLocalStorage() : [],
   });
   const { timers } = state;
+  // When the timers changes store it to local storage
   useEffect(() => {
     setLocalStorage(timers);
   }, [state]);
+
   function addTimer(newTimer: NewTimer) {
     const { seconds, minutes, eventName, id } = newTimer;
     const initialSeconds = minutes * 60 + seconds;
